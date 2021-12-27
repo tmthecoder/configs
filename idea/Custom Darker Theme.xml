@@ -1,0 +1,25 @@
+<mtTheme>
+  <id>1</id>
+  <editorColorsScheme>MyDarkTheme</editorColorsScheme>
+  <dark>true</dark>
+  <name>MyDarkTheme</name>
+  <colors>
+    <color id="background" value="000000ff"/>
+    <color id="foreground" value="b0bec5ff"/>
+    <color id="text" value="727272ff"/>
+    <color id="highlight" value="3f3f3fff"/>
+    <color id="selectionBackground" value="151515ff"/>
+    <color id="selectionForeground" value="ffffffff"/>
+    <color id="button" value="2a2a2aff"/>
+    <color id="secondaryBackground" value="292929ff"/>
+    <color id="disabled" value="424242ff"/>
+    <color id="contrast" value="1a1a1aff"/>
+    <color id="tableSelected" value="323232ff"/>
+    <color id="secondBorder" value="292929ff"/>
+    <color id="treeSelection" value="323232c0"/>
+    <color id="notifications" value="1a1a1aff"/>
+    <color id="accent" value="84ffffff"/>
+    <color id="excluded" value="323232ff"/>
+  </colors>
+  <themeId>1</themeId>
+</mtTheme>
