@@ -1,0 +1,15 @@
+" source my basic vimrc
+source ./basic_vimrc
+
+" disable vi support so we can use plugins
+set nocompatible
+
+" setup vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'scrooloose/nerdtree'
+Plugin 'luochen1990/rainbow'
+Plugin 'neovim/nvim-lspconfig'
+call vundle#end()
+filetype plugin indent on
