@@ -8,7 +8,7 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " setup vundle with vim-only plugins
-call vundle#begin()
+call plug#begin()
 source ~/.config/vim/plugins.vim
-call vundle#end()
+call plug#end()
 filetype plugin indent on

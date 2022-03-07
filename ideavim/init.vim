@@ -14,7 +14,7 @@ map Q gq
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
-map <leader>r <Action>(ReformatCode)
+map <leader>r <Action>(Run)
 
 " Map <leader>c to idea's Git Commit/VCS dialog
 map <leader>c <Action>(CheckinProject)
@@ -27,6 +27,9 @@ map <leader>f <Action>(ShowIntentionActions)
 
 " Map <leader>g to idea's command-enter auto generation
 map<leader>g <Action>(Generate)
+
+" Map <leader>n to idea's refactor/rename
+map<leader>n <Action>(RenameElement)
 
 " Set the handler for conflicting shortcuts
 sethandler n:vim i:ide

@@ -8,7 +8,14 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " setup vundle with nvim- & vim-compatible plugins
-call vundle#begin()
+call plug#begin()
 source ~/.config/nvim/plugins.vim
-call vundle#end()
+call plug#end()
+
+" Loads lua config
+lua require('init')
+
+set completeopt=menuone,noinsert,noselect
+
 filetype plugin indent on
+colorscheme github_dark_default
