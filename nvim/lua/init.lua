@@ -10,6 +10,16 @@ require('material').setup({
     },
     lualine_style = 'default'
 })
+
+require('nvim-tree').setup {
+    open_on_tab = true,
+    open_on_setup = true,
+    auto_close = true,
+    hijack_directories = {
+        enable = true,
+        auto_open = true
+    }
+}
 local nvim_lsp = require("lspconfig")
 local lsp_status = require("lsp-status")
 
@@ -197,3 +207,5 @@ cmp.setup({
     { name = 'buffer' },
   },
 })
+
+require("trouble").setup()

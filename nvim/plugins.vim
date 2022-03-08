@@ -9,6 +9,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'folke/trouble.nvim'
 
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
@@ -25,11 +26,13 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'nvim-lua/diagnostic-nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'simrat39/rust-tools.nvim'
 
 Plug 'marko-cerovac/material.nvim'
+
+" Language-specific
+Plug 'mfussenegger/nvim-jdtls'
+Plug 'simrat39/rust-tools.nvim'
