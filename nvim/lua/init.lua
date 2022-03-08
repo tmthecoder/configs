@@ -1,3 +1,15 @@
+require('nvim-tree').setup()
+require('lualine').setup {
+    options = {
+        theme = 'auto'
+    }
+}
+require('material').setup({
+    disable = {
+        background = true
+    },
+    lualine_style = 'default'
+})
 local nvim_lsp = require("lspconfig")
 local lsp_status = require("lsp-status")
 

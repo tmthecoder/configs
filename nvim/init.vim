@@ -18,4 +18,6 @@ lua require('init')
 set completeopt=menuone,noinsert,noselect
 
 filetype plugin indent on
-colorscheme github_dark_default
+
+let g:material_style = "darker"
+colorscheme material 

@@ -1,6 +1,7 @@
 source ~/.config/vim/plugins.vim
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/lsp-status.nvim'
 
 " nvim lsp completion
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -12,18 +13,23 @@ Plug 'hrsh7th/nvim-cmp'
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
 
-Plug 'nvim-lua/lsp-status.nvim'
-Plug 'nvim-lua/diagnostic-nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'sheerun/vim-polyglot'
-Plug 'ryanoasis/vim-devicons'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Nvim Tree & Icons
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
+" Statusline
+Plug 'nvim-lualine/lualine.nvim'
+
+" Telescope for finding stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'nvim-lua/diagnostic-nvim'
+Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'simrat39/rust-tools.nvim'
+
+Plug 'marko-cerovac/material.nvim'
