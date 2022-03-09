@@ -212,3 +212,4 @@ require("trouble").setup()
 require'lspconfig'.bashls.setup{}
 require("flutter-tools").setup{} 
 require'lspconfig'.vimls.setup{}
+require'lspconfig'.tsserver.setup{}
