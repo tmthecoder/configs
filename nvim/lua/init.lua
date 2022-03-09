@@ -209,3 +209,6 @@ cmp.setup({
 })
 
 require("trouble").setup()
+require'lspconfig'.bashls.setup{}
+require("flutter-tools").setup{} 
+
