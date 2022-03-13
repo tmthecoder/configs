@@ -1,5 +1,6 @@
 source ~/.config/vim/plugins.vim
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/lsp-status.nvim'
 

@@ -32,7 +32,11 @@ nnoremap <leader>ca <cmd> lua vim.lsp.buf.code_action()<cr>
 nnoremap <leader>t <cmd>NvimTreeToggle<cr>
 nnoremap <leader>tr <cmd>NvimTreeRefresh<cr>
 
+" Vista toggle shorthand
+nnoremap <leader>v <cmd>Vista<cr>
+
 filetype plugin indent on
 
 colorscheme material 
-
+autocmd VimEnter * NvimTreeToggle
+autocmd VimEnter * Vista
