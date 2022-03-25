@@ -22,6 +22,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 
+" Tab Line
+Plug 'romgrk/barbar.nvim'
+
 " Telescope for finding stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
