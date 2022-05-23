@@ -9,7 +9,7 @@ set termguicolors
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " Mouse for clicking if desired
-set mouse+=a
+"set mouse+=a
 
 " setup vundle with nvim- & vim-compatible plugins
 call plug#begin()
