@@ -1,21 +1,15 @@
 " get all configs from the shared init
 source ~/.config/vim/init.vim
 
-" disable vi support so we can use plugins
-set nocompatible
+" Set color support
 set termguicolors
 
-" setup vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Mouse for clicking if desired
-"set mouse+=a
-
-" setup vundle with nvim- & vim-compatible plugins
+" setup Vim-Plug with nvim- & vim-compatible plugins
 call plug#begin()
 source ~/.config/nvim/plugins.vim
 call plug#end()
 
+" Material theme setting
 let g:material_style = "darker"
 
 " Loads lua config
@@ -45,3 +39,4 @@ colorscheme material
 
 autocmd VimEnter * TreeToggle
 autocmd VimEnter * Vista
+autocmd VimEnter * Trouble
