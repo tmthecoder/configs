@@ -1,9 +1,9 @@
-require('nvim-tree').setup()
 require('lualine').setup {
     options = {
         theme = 'auto'
     }
 }
+
 require('material').setup({
     disable = {
         background = true
@@ -18,116 +18,6 @@ require('nvim-tree').setup {
     hijack_directories = {
         enable = true,
         auto_open = true
-    }
-}
-local nvim_lsp = require("lspconfig")
-local lsp_status = require("lsp-status")
-
-local on_attach = function(client)
-    lsp_status.register_progress()
-    lsp_status.config(
-        {
-            status_symbol = "LSP ",
-            indicator_errors = "E",
-            indicator_warnings = "W",
-            indicator_info = "I",
-            indicator_hint = "H",
-            indicator_ok = "ok"
-        }
-    )
-end
-
-local servers = {
-    "rust_analyzer",
-    "clangd",
-    "tsserver",
-    "cmake",
-    "bashls"
-}
-
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-        on_attach = on_attach,
-        capabilities = lsp_status.capabilities
-    }
-end
-
--- Setup diagnostics formaters and linters for non LSP provided files
-nvim_lsp.diagnosticls.setup {
-    on_attach = on_attach,
-    capabilities = lsp_status.capabilities,
-    cmd = {"diagnostic-languageserver", "--stdio"},
-    filetypes = {
-        "lua",
-        "sh",
-        "markdown",
-        "json",
-        "yaml",
-        "toml"
-    },
-    init_options = {
-        linters = {
-            shellcheck = {
-                command = "shellcheck",
-                debounce = 100,
-                args = {"--format", "json", "-"},
-                sourceName = "shellcheck",
-                parseJson = {
-                    line = "line",
-                    column = "column",
-                    endLine = "endLine",
-                    endColumn = "endColumn",
-                    message = "${message} [${code}]",
-                    security = "level"
-                },
-                securities = {
-                    error = "error",
-                    warning = "warning",
-                    info = "info",
-                    style = "hint"
-                }
-            },
-            markdownlint = {
-                command = "markdownlint",
-                isStderr = true,
-                debounce = 100,
-                args = {"--stdin"},
-                offsetLine = 0,
-                offsetColumn = 0,
-                sourceName = "markdownlint",
-                formatLines = 1,
-                formatPattern = {
-                    "^.*?:\\s?(\\d+)(:(\\d+)?)?\\s(MD\\d{3}\\/[A-Za-z0-9-/]+)\\s(.*)$",
-                    {
-                        line = 1,
-                        column = 3,
-                        message = {4}
-                    }
-                }
-            }
-        },
-        filetypes = {
-            sh = "shellcheck",
-            markdown = "markdownlint"
-        },
-        formatters = {
-            shfmt = {
-                command = "shfmt",
-                args = {"-i", "2", "-bn", "-ci", "-sr"}
-            },
-            prettier = {
-                command = "prettier",
-                args = {"--stdin-filepath", "%filepath"},
-            }
-        },
-        formatFiletypes = {
-            sh = "shfmt",
-            json = "prettier",
-            yaml = "prettier",
-            toml = "prettier",
-            markdown = "prettier",
-            lua = "prettier"
-        }
     }
 }
 
@@ -208,8 +98,124 @@ cmp.setup({
   },
 })
 
+
+
+local nvim_lsp = require("lspconfig")
+local lsp_status = require("lsp-status")
+
+local on_attach = function(client)
+    lsp_status.register_progress()
+    lsp_status.config(
+        {
+            status_symbol = "LSP ",
+            indicator_errors = "E",
+            indicator_warnings = "W",
+            indicator_info = "I",
+            indicator_hint = "H",
+            indicator_ok = "ok"
+        }
+    )
+   local bufopts = { noremap = true, silent = true, buffer = buffnr }
+    vim.keymap.set('n', '<leader>d', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<leader>d', vim.lsp.buf.references, bufopts)
+end
+
+local servers = {
+    "rust_analyzer",
+    "clangd",
+    "tsserver",
+    "cmake",
+    "bashls",
+    "gopls",
+    "vimls"
+}
+
+for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
+        on_attach = on_attach,
+        capabilities = lsp_status.capabilities
+    }
+end
+
 require("trouble").setup()
-require'lspconfig'.bashls.setup{}
 require("flutter-tools").setup{} 
-require'lspconfig'.vimls.setup{}
-require'lspconfig'.tsserver.setup{}
+
+-- Setup diagnostics formaters and linters for non LSP provided files
+nvim_lsp.diagnosticls.setup {
+    on_attach = on_attach,
+    capabilities = lsp_status.capabilities,
+    cmd = {"diagnostic-languageserver", "--stdio"},
+    filetypes = {
+        "lua",
+        "sh",
+        "markdown",
+        "json",
+        "yaml",
+        "toml"
+    },
+    init_options = {
+        linters = {
+            shellcheck = {
+                command = "shellcheck",
+                debounce = 100,
+                args = {"--format", "json", "-"},
+                sourceName = "shellcheck",
+                parseJson = {
+                    line = "line",
+                    column = "column",
+                    endLine = "endLine",
+                    endColumn = "endColumn",
+                    message = "${message} [${code}]",
+                    security = "level"
+                },
+                securities = {
+                    error = "error",
+                    warning = "warning",
+                    info = "info",
+                    style = "hint"
+                }
+            },
+            markdownlint = {
+                command = "markdownlint",
+                isStderr = true,
+                debounce = 100,
+                args = {"--stdin"},
+                offsetLine = 0,
+                offsetColumn = 0,
+                sourceName = "markdownlint",
+                formatLines = 1,
+                formatPattern = {
+                    "^.*?:\\s?(\\d+)(:(\\d+)?)?\\s(MD\\d{3}\\/[A-Za-z0-9-/]+)\\s(.*)$",
+                    {
+                        line = 1,
+                        column = 3,
+                        message = {4}
+                    }
+                }
+            }
+        },
+        filetypes = {
+            sh = "shellcheck",
+            markdown = "markdownlint"
+        },
+        formatters = {
+            shfmt = {
+                command = "shfmt",
+                args = {"-i", "2", "-bn", "-ci", "-sr"}
+            },
+            prettier = {
+                command = "prettier",
+                args = {"--stdin-filepath", "%filepath"},
+            }
+        },
+        formatFiletypes = {
+            sh = "shfmt",
+            json = "prettier",
+            yaml = "prettier",
+            toml = "prettier",
+            markdown = "prettier",
+            lua = "prettier"
+        }
+    }
+}
+
