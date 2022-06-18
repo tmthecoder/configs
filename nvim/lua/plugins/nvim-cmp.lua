@@ -1,3 +1,4 @@
+local cmp = require('cmp')
 local opts = {
   -- Enable LSP snippets
   snippet = {
@@ -30,4 +31,4 @@ local opts = {
   },
 }
 
-require('cmp').setup(opts)
+cmp.setup(opts)

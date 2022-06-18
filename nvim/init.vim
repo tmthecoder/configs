@@ -13,7 +13,14 @@ call plug#end()
 let g:material_style = "darker"
 
 " Loads lua config
-lua require('init')
+lua require('plugins/lualine')
+lua require('plugins/material')
+lua require('plugins/nvim-tree')
+lua require('plugins/nvim-cmp')
+lua require('plugins/nvim-lspconfig')
+lua require('plugins/rust-tools')
+lua require('trouble').setup();
+lua require('flutter-tools').setup()
 command! TreeToggle lua require('tree').toggle()
 lua require('bindings')
 
