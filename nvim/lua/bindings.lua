@@ -6,7 +6,8 @@ map('n', '<leader>ff', '<Cmd>Telescope find_files<CR>', opts)
 map('n', '<leader>fg', '<Cmd>Telescope live_grep<CR>', opts)
 
 -- Nvim Tree Bindings
-map('n', '<leader>tr', '<Amd>NvimTreeRefresh<CR>', opts)
+map('n', '<leader>tt', '<Cmd>NvimTreeToggle<CR>', opts)
+map('n', '<leader>tr', '<Cmd>NvimTreeRefresh<CR>', opts)
 
 -- Buffer Bindings (Next & Previous)
 map('n', '<A-=>', '<Cmd>BufferNext<CR>', opts)

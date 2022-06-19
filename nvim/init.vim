@@ -21,21 +21,14 @@ lua require('plugins/nvim-lspconfig')
 lua require('plugins/rust-tools')
 lua require('trouble').setup();
 lua require('flutter-tools').setup()
-command! TreeToggle lua require('tree').toggle()
 lua require('bindings')
 
 set completeopt=menuone,noinsert,noselect
-
-"Nvim Tree Bindings
-nnoremap <leader>t <cmd>TreeToggle<cr>
-
-" Vista toggle shorthand
-nnoremap <leader>v <cmd>Vista<cr>
 
 filetype plugin indent on
 
 colorscheme material 
 
-autocmd VimEnter * TreeToggle
+autocmd VimEnter * NvimTreeToggle
 autocmd VimEnter * Vista
 autocmd VimEnter * Trouble
