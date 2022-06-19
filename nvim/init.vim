@@ -20,7 +20,6 @@ lua require('plugins/nvim-cmp')
 lua require('plugins/nvim-lspconfig')
 lua require('plugins/rust-tools')
 lua require('trouble').setup();
-lua require('flutter-tools').setup()
 lua require('bindings')
 
 set completeopt=menuone,noinsert,noselect

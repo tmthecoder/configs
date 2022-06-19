@@ -14,8 +14,13 @@ local on_attach = function(client)
         }
     )
    local bufopts = { noremap = true, silent = true, buffer = buffnr }
-    vim.keymap.set('n', '<leader>d', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<leader>d', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', '<leader>dc', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', '<leader>df', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<leader>tdf', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 end
 
 local servers = {
@@ -113,6 +118,12 @@ for _, lsp in ipairs(servers) do
         capabilities = lsp_status.capabilities
     }
 end
+
+require('flutter-tools').setup({
+    lsp = {
+        on_attach = on_attach
+    }
+})
 
 -- Setup diagnostics formaters and linters for non LSP provided files
 nvim_lsp.diagnosticls.setup(diagnisticls_opts) 
