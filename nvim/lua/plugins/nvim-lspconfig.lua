@@ -26,7 +26,6 @@ end
 local servers = {
     "rust_analyzer",
     "clangd",
-    "tsserver",
     "cmake",
     "bashls",
     "gopls",
@@ -118,6 +117,12 @@ for _, lsp in ipairs(servers) do
         capabilities = lsp_status.capabilities
     }
 end
+
+require('typescript').setup({
+    server = {
+        on_attach = on_attach
+    }
+})
 
 require('flutter-tools').setup({
     lsp = {
