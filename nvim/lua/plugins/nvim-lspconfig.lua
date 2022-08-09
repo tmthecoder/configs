@@ -1,27 +1,7 @@
 local nvim_lsp = require("lspconfig")
-local lsp_status = require("lsp-status")
+local lsp_status = require('lsp-status')
 
-local on_attach = function(client)
-    lsp_status.register_progress()
-    lsp_status.config(
-        {
-            status_symbol = "LSP ",
-            indicator_errors = "E",
-            indicator_warnings = "W",
-            indicator_info = "I",
-            indicator_hint = "H",
-            indicator_ok = "ok"
-        }
-    )
-   local bufopts = { noremap = true, silent = true, buffer = buffnr }
-    vim.keymap.set('n', '<leader>dc', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', '<leader>df', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<leader>tdf', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-end
+local on_attach = require("../generic/lsp-on-attach")
 
 local servers = {
     "rust_analyzer",
@@ -117,18 +97,6 @@ for _, lsp in ipairs(servers) do
         capabilities = lsp_status.capabilities
     }
 end
-
-require('typescript').setup({
-    server = {
-        on_attach = on_attach
-    }
-})
-
-require('flutter-tools').setup({
-    lsp = {
-        on_attach = on_attach
-    }
-})
 
 -- Setup diagnostics formaters and linters for non LSP provided files
 nvim_lsp.diagnosticls.setup(diagnisticls_opts) 
