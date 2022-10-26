@@ -19,6 +19,7 @@ lua require('plugins/material')
 lua require('plugins/nvim-tree')
 lua require('plugins/nvim-cmp')
 lua require('plugins/nvim-lspconfig')
+lua require('plugins/nvim-surround')
 lua require('plugins/rust-tools')
 lua require('plugins/typescript')
 lua require('trouble').setup();
