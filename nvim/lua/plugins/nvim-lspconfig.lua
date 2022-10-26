@@ -9,7 +9,8 @@ local servers = {
     "cmake",
     "bashls",
     "gopls",
-    "vimls"
+    "vimls",
+    "pyright"
 }
 
 local diagnisticls_opts = {
