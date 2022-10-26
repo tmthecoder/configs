@@ -10,7 +10,8 @@ local servers = {
     "bashls",
     "gopls",
     "vimls",
-    "pyright"
+    "pyright",
+    "sumneko_lua"
 }
 
 local diagnisticls_opts = {

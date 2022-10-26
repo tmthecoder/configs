@@ -1,6 +1,6 @@
 local lsp_status = require("lsp-status")
 
-local on_attach = function(client)
+local on_attach = function(client, buffnr)
     lsp_status.register_progress()
     lsp_status.config(
         {
@@ -12,7 +12,8 @@ local on_attach = function(client)
             indicator_ok = "ok"
         }
     )
-   local bufopts = { noremap = true, silent = true, buffer = buffnr }
+    -- Keybinds
+    local bufopts = { noremap = true, silent = true, buffer = buffnr }
     vim.keymap.set('n', '<leader>dc', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', '<leader>df', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, bufopts)
@@ -20,6 +21,16 @@ local on_attach = function(client)
     vim.keymap.set('n', '<leader>tdf', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    
+    -- Formatting
+    if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+                group = vim.api.nvim_create_augroup("Format", { clear = true }),
+                buffer = buffnr,
+                callback = function () vim.lsp.buf.formatting_seq_sync() end
+
+        })
+    end
 end
 
 return on_attach
