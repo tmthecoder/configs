@@ -18,6 +18,7 @@ Plug 'folke/trouble.nvim'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'onsails/lspkind.nvim'
+Plug 'rafamadriz/friendly-snippets'
 
 " Nvim Tree & Icons
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
