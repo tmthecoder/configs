@@ -8,11 +8,11 @@ local opts = {
   },
 
   formatting = {
-      format = require('lspkind').cmp_format({
-          mode = 'symbol',
-          maxwidth = 50,
-          ellipsis_char = '...',
-      })
+    format = require('lspkind').cmp_format({
+      mode = 'symbol',
+      maxwidth = 50,
+      ellipsis_char = '...',
+    })
   },
 
   mapping = {
@@ -34,9 +34,11 @@ local opts = {
   -- Installed sources
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
+    { name = 'calc' }
   },
 }
 
