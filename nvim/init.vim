@@ -15,11 +15,13 @@ let g:material_style = "darker"
 " Loads lua config
 lua require('plugins/flutter-tools')
 lua require('plugins/lualine')
+lua require('plugins/luasnip')
 lua require('plugins/material')
 lua require('plugins/nvim-tree')
 lua require('plugins/nvim-cmp')
 lua require('plugins/nvim-lspconfig')
 lua require('plugins/nvim-surround')
+lua require('plugins/nvim-ts-autotag')
 lua require('plugins/rust-tools')
 lua require('plugins/typescript')
 lua require('trouble').setup();

@@ -13,7 +13,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'folke/trouble.nvim'
 
 " Snippet engine
-Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'onsails/lspkind.nvim'
 
 " Nvim Tree & Icons
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -46,3 +48,4 @@ Plug 'jose-elias-alvarez/typescript.nvim'
 
 " Surround for Auto-complete
 Plug 'kylechui/nvim-surround'
+Plug 'windwp/nvim-ts-autotag'
