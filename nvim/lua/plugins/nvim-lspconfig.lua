@@ -11,13 +11,14 @@ local servers = {
     "gopls",
     "vimls",
     "pyright",
-    "sumneko_lua"
+    "sumneko_lua",
+    "jsonls"
 }
 
 local diagnisticls_opts = {
     on_attach = on_attach,
     capabilities = lsp_status.capabilities,
-    cmd = {"diagnostic-languageserver", "--stdio"},
+    cmd = { "diagnostic-languageserver", "--stdio" },
     filetypes = {
         "lua",
         "sh",
@@ -31,7 +32,7 @@ local diagnisticls_opts = {
             shellcheck = {
                 command = "shellcheck",
                 debounce = 100,
-                args = {"--format", "json", "-"},
+                args = { "--format", "json", "-" },
                 sourceName = "shellcheck",
                 parseJson = {
                     line = "line",
@@ -52,7 +53,7 @@ local diagnisticls_opts = {
                 command = "markdownlint",
                 isStderr = true,
                 debounce = 100,
-                args = {"--stdin"},
+                args = { "--stdin" },
                 offsetLine = 0,
                 offsetColumn = 0,
                 sourceName = "markdownlint",
@@ -62,7 +63,7 @@ local diagnisticls_opts = {
                     {
                         line = 1,
                         column = 3,
-                        message = {4}
+                        message = { 4 }
                     }
                 }
             }
@@ -74,11 +75,11 @@ local diagnisticls_opts = {
         formatters = {
             shfmt = {
                 command = "shfmt",
-                args = {"-i", "2", "-bn", "-ci", "-sr"}
+                args = { "-i", "2", "-bn", "-ci", "-sr" }
             },
             prettier = {
                 command = "prettier",
-                args = {"--stdin-filepath", "%filepath"},
+                args = { "--stdin-filepath", "%filepath" },
             }
         },
         formatFiletypes = {
@@ -101,4 +102,4 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Setup diagnostics formaters and linters for non LSP provided files
-nvim_lsp.diagnosticls.setup(diagnisticls_opts) 
+nvim_lsp.diagnosticls.setup(diagnisticls_opts)
