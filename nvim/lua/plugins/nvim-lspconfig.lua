@@ -1,5 +1,4 @@
 local nvim_lsp = require("lspconfig")
-local lsp_status = require('lsp-status')
 
 local on_attach = require("../generic/lsp-on-attach")
 
@@ -15,9 +14,12 @@ local servers = {
     "jsonls"
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 local diagnisticls_opts = {
     on_attach = on_attach,
-    capabilities = lsp_status.capabilities,
+    capabilities = capabilities,
     cmd = { "diagnostic-languageserver", "--stdio" },
     filetypes = {
         "lua",
@@ -93,11 +95,10 @@ local diagnisticls_opts = {
     }
 }
 
-
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
-        capabilities = lsp_status.capabilities
+        capabilities = capabilities
     }
 end
 
