@@ -13,7 +13,7 @@ ls.snippets.javascript = ls.snippets.html
 ls.snippets.javascriptreact = ls.snippets.html
 ls.snippets.typescriptreact = ls.snippets.html
 
-ls.add_snippets("all")
+require("luasnip/loaders/from_vscode").load({ include = { "html" } })
 
-require("luasnip/loaders/from_vscode").load()
-require("luasnip/loaders/from_vscode").load({ paths = { "~/.local/share/nvim/plugged/friendly-snippets" } })
+require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvim/plugged/friendly-snippets" } })
