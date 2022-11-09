@@ -29,6 +29,7 @@ lua require('trouble').setup();
 lua require('bindings')
 
 set completeopt=menuone,noinsert,noselect
+set mouse=
 
 filetype plugin indent on
 
