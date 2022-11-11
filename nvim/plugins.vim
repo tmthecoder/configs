@@ -52,3 +52,4 @@ Plug 'jose-elias-alvarez/typescript.nvim'
 " Surround for Auto-complete
 Plug 'kylechui/nvim-surround'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'windwp/nvim-autopairs'
