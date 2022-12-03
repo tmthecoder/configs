@@ -46,7 +46,6 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'akinsho/flutter-tools.nvim'
-Plug 'mfussenegger/nvim-jdtls'
 Plug 'jose-elias-alvarez/typescript.nvim'
 
 " Surround for Auto-complete
