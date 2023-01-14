@@ -13,6 +13,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'folke/trouble.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Snippet engine
 Plug 'L3MON4D3/LuaSnip'
@@ -47,6 +48,7 @@ Plug 'mfussenegger/nvim-jdtls'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'MunifTanjim/prettier.nvim'
 
 " Surround for Auto-complete
 Plug 'kylechui/nvim-surround'

@@ -24,6 +24,8 @@ lua require('plugins/nvim-lspconfig')
 lua require('plugins/nvim-lspstatus')
 lua require('plugins/nvim-surround')
 lua require('plugins/nvim-ts-autotag')
+lua require('plugins/null-ls')
+lua require('plugins/prettier')
 lua require('plugins/rust-tools')
 lua require('plugins/typescript')
 lua require('trouble').setup();
@@ -32,6 +34,8 @@ lua require('bindings')
 set completeopt=menuone,noinsert,noselect
 set mouse=
 
+set regexpengine=0
+syntax on
 filetype plugin indent on
 
 colorscheme material 
