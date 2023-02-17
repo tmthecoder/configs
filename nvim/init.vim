@@ -13,6 +13,7 @@ call plug#end()
 let g:material_style = "darker"
 
 " Loads lua config
+lua require('plugins/mason');
 lua require('plugins/flutter-tools')
 lua require('plugins/lualine')
 lua require('plugins/luasnip')

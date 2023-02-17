@@ -49,6 +49,8 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'MunifTanjim/prettier.nvim'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 " Surround for Auto-complete
 Plug 'kylechui/nvim-surround'

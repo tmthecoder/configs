@@ -3,15 +3,18 @@ local nvim_lsp = require("lspconfig")
 local on_attach = require("../generic/lsp-on-attach")
 
 local servers = {
-    "rust_analyzer",
-    "clangd",
-    "cmake",
-    "bashls",
-    "gopls",
-    "vimls",
-    "pyright",
-    "sumneko_lua",
-    "jsonls"
+    'asm_lsp',
+    'bashls',
+    'clangd',
+    'cmake',
+    'eslint',
+    'gopls',
+    'jsonls',
+    'sumneko_lua',
+    'pyright',
+    'rust_analyzer',
+    'tsserver',
+    'vimls'
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
