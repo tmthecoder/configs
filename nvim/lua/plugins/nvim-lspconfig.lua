@@ -10,7 +10,7 @@ local servers = {
     'eslint',
     'gopls',
     'jsonls',
-    'sumneko_lua',
+    'lua_ls',
     'pyright',
     'rust_analyzer',
     'tsserver',
