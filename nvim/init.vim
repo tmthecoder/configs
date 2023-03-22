@@ -13,23 +13,7 @@ call plug#end()
 let g:material_style = "darker"
 
 " Loads lua config
-lua require('plugins/mason');
-lua require('plugins/flutter-tools')
-lua require('plugins/lualine')
-lua require('plugins/luasnip')
-lua require('plugins/material')
-lua require('plugins/nvim-tree')
-lua require('plugins/nvim-cmp')
-lua require('plugins/nvim-autopairs')
-lua require('plugins/nvim-lspconfig')
-lua require('plugins/nvim-lspstatus')
-lua require('plugins/nvim-surround')
-lua require('plugins/nvim-ts-autotag')
-lua require('plugins/null-ls')
-lua require('plugins/prettier')
-lua require('plugins/rust-tools')
-lua require('plugins/typescript')
-lua require('trouble').setup();
+lua require('plugins')
 lua require('bindings')
 
 set completeopt=menuone,noinsert,noselect

@@ -1,7 +1,9 @@
 source ~/.config/vim/plugins.vim
+" Tree-sitter & LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'nvim-lua/lsp-status.nvim'
 
 " nvim lsp completion
@@ -42,6 +44,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'marko-cerovac/material.nvim'
+Plug 'mbbill/undotree'
 
 " Language-specific
 Plug 'mfussenegger/nvim-jdtls'

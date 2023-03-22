@@ -1,9 +1,11 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Telescope Shortcuts (finding stuff)
-map('n', '<leader>ff', '<Cmd>Telescope find_files<CR>', opts)
-map('n', '<leader>fg', '<Cmd>Telescope live_grep<CR>', opts)
+local telescope = require('telescope.builtin')
+map('n', '<leader>ff', telescope.find_files, opts)
+map('n', '<leader>gr', telescope.live_grep, opts)
+map('n', '<leader>gf', telescope.git_files, opts)
 
 -- Nvim Tree Bindings
 map('n', '<leader>tt', '<Cmd>NvimTreeToggle<CR>', opts)
@@ -28,3 +30,9 @@ map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 
 -- Buffer Bindings (Close)
 map('n', '<A-w>', '<Cmd>BufferClose<CR>', opts)
+
+-- Undo Tree Bindings
+map('n', '<leader>ut', vim.cmd.UndotreeToggle)
+
+-- Vim Fugitive
+map('n', '<leader>gs', vim.cmd.Git)
