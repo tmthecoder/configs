@@ -19,3 +19,7 @@ set magic
 
 " show search matches while typing
 set showmatch
+
+" search
+set hlsearch
+set incsearch

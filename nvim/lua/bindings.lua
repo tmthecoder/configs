@@ -36,3 +36,23 @@ map('n', '<leader>ut', vim.cmd.UndotreeToggle)
 
 -- Vim Fugitive
 map('n', '<leader>gs', vim.cmd.Git)
+
+-- Search in middle
+map('n', 'n', "nzzzv")
+map('n', 'N', "Nzzzv")
+
+-- Copy to system clipboard
+map('n', '<leader>y', "\"+y")
+map('v', '<leader>y', "\"+y")
+map('n', '<leader>Y', "\"+Y")
+
+-- Delete to void buffer
+map('n', '<leader>d', "\"_d")
+map('n', '<leader>dd', "\"_dd")
+map('v', '<leader>d', "\"_d")
+
+-- Switch Sessions
+map('n', '<C-s>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+
+-- Replace current word
+map('n', "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
