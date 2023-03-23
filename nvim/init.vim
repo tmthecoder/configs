@@ -5,8 +5,8 @@ source ~/.config/vim/init.vim
 set termguicolors
 
 "Persistent undos
-set undodir = os.getenv("HOME") .. "/.vim/undodir"
-set undofile = true
+set undodir=~/.vim/undo-dir
+set undofile
 
 " setup Vim-Plug with nvim- & vim-compatible plugins
 call plug#begin()

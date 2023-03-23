@@ -1,5 +1,4 @@
 if vim.g.nvim_jdtls then
-
   local jdtls = require "jdtls"
   -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
   local config = {
@@ -10,6 +9,12 @@ if vim.g.nvim_jdtls then
     -- for a list of options
     settings = {
       java = {
+        runtimes = {
+          {
+            name = "JavaSE-11",
+            path = "/Library/Java/JavaVirtualMachines/openjdk-11.jdk",
+          },
+        }
       }
     },
   }
@@ -30,5 +35,4 @@ if vim.g.nvim_jdtls then
   command! -buffer JdtJshell lua require('jdtls').jshell()
   command! -buffer JdtSetupDapMainClassConfig lua require('jdtls.dap').setup_dap_main_class_configs()
 ]]
-
 end

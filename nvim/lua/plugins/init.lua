@@ -1,3 +1,4 @@
+require('plugins/comment')
 require('plugins/flutter-tools')
 require('plugins/lualine')
 require('plugins/luasnip')

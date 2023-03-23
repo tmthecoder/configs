@@ -59,3 +59,10 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'kylechui/nvim-surround'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'windwp/nvim-autopairs'
+
+" Commenting
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'numToStr/Comment.nvim'
+
+" Copilot
+Plug 'github/copilot.vim'
