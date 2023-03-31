@@ -26,9 +26,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end
 })
-
-vim.api.nvim_create_user_command('NvimTreeToggle', function()
-  nvim_tree.toggle()
-end,
-  {}
-)
