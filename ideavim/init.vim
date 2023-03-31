@@ -13,7 +13,9 @@ set incsearch
 map Q gq
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
+nnoremap <leader>r <Nop>
+
+" Map \s to the Run Code action
 map <leader>rf <Action>(Run)
 
 " Map <leader>c to idea's Git Commit/VCS dialog
