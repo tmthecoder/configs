@@ -1,14 +1,28 @@
 local nvim_tree = require('nvim-tree')
-nvim_tree.setup {
+local opts = {
   open_on_tab = true,
   hijack_directories = {
     enable = true,
     auto_open = true
+  },
+  diagnostics = {
+    enable = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+  modified = {
+    enable = true,
   }
 }
+nvim_tree.setup(opts)
 
 local nvim_tree_events = require('nvim-tree.events')
 local bufferline_api = require('bufferline.api')
+
+local function open_nvim_tree()
+  require("nvim-tree.api").tree.toggle({ focus = false })
+end
 
 nvim_tree_events.on_tree_open(function()
   bufferline_api.set_offset(31, "File Tree")
@@ -26,3 +40,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end
 })
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

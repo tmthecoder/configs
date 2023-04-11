@@ -14,4 +14,5 @@ require('plugins/null-ls')
 require('plugins/prettier')
 require('plugins/rust-tools')
 require('plugins/typescript')
-require('trouble').setup();
+require('plugins/trouble')
+require('plugins/vista');

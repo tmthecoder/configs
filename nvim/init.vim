@@ -29,6 +29,4 @@ filetype plugin indent on
 
 colorscheme material 
 
-autocmd VimEnter * NvimTreeOpen 
 autocmd VimEnter * Vista
-autocmd VimEnter * Trouble

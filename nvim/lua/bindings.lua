@@ -58,4 +58,4 @@ map('n', '<C-s>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 map('n', "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Comment with '/' in visual
-map('v', '/', 'gc')
+map('v', '/', 'gc', { remap = true })
