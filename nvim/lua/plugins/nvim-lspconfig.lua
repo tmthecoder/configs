@@ -7,6 +7,7 @@ local servers = {
     'bashls',
     'clangd',
     'cmake',
+    'dockerls',
     'eslint',
     'gopls',
     'jsonls',
