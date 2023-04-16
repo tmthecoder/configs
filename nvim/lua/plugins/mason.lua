@@ -4,6 +4,7 @@ local opts = {
         'bashls',
         'clangd',
         'cmake',
+        'dockerls',
         'eslint',
         'gopls',
         'jsonls',
