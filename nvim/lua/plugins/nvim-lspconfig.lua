@@ -4,6 +4,7 @@ local on_attach = require("../generic/lsp-on-attach")
 
 local servers = {
     'asm_lsp',
+    'arduino_language_server',
     'bashls',
     'clangd',
     'cmake',
@@ -99,10 +100,20 @@ local diagnisticls_opts = {
 }
 
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
+    local opts = {
         on_attach = on_attach,
         capabilities = capabilities
-    }
+    };
+    if (lsp == "arduino_language_server") then
+        opts["cmd"] = {
+            "arduino-language-server",
+            "-cli-config", "/Users/tejasmehta/Library/Arduino15/arduino-cli.yaml",
+            "-fqbn", "arduino:avr:uno",
+            "-cli", "/opt/homebrew/bin/arduino-cli",
+            "-clangd", "/usr/bin/clangd"
+        }
+    end
+    nvim_lsp[lsp].setup(opts)
 end
 
 -- Setup diagnostics formaters and linters for non LSP provided files

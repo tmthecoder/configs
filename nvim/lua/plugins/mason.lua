@@ -1,6 +1,7 @@
 local opts = {
     ensure_installed = {
         'asm_lsp',
+        'arduino_language_server',
         'bashls',
         'clangd',
         'cmake',
