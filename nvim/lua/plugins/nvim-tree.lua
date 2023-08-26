@@ -17,18 +17,19 @@ local opts = {
 }
 nvim_tree.setup(opts)
 
-local nvim_tree_events = require('nvim-tree.events')
+local nvim_tree_api = require('nvim-tree.api')
 local bufferline_api = require('bufferline.api')
 
 local function open_nvim_tree()
   require("nvim-tree.api").tree.toggle({ focus = false })
 end
 
-nvim_tree_events.on_tree_open(function()
+nvim_tree_api.events.subscribe(nvim_tree_api.events.Event.TreeOpen, function()
   bufferline_api.set_offset(31, "File Tree")
 end)
 
-nvim_tree_events.on_tree_close(function()
+
+nvim_tree_api.events.subscribe(nvim_tree_api.events.Event.TreeClose, function()
   bufferline_api.set_offset(0)
 end)
 
