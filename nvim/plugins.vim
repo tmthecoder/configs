@@ -66,3 +66,6 @@ Plug 'numToStr/Comment.nvim'
 
 " Copilot
 Plug 'github/copilot.vim'
+
+" Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
