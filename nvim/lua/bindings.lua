@@ -7,6 +7,9 @@ map('n', '<leader>ff', telescope.find_files, opts)
 map('n', '<leader>gr', telescope.live_grep, opts)
 map('n', '<leader>gf', telescope.git_files, opts)
 
+-- Telescope + Nvim Devdocs
+map('n', '<leader>do', '<Cmd>DevdocsOpenCurrentFloat<CR>', opts)
+
 -- Nvim Tree Bindings
 map('n', '<leader>tt', '<Cmd>NvimTreeToggle<CR>', opts)
 map('n', '<leader>tr', '<Cmd>NvimTreeRefresh<CR>', opts)

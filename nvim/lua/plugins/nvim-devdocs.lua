@@ -1,1 +1,3 @@
-require("nvim-devdocs").setup()
+require("nvim-devdocs").setup({
+    previewer_cmd = "glow",
+})
