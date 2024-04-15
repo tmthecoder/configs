@@ -14,6 +14,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'petertriho/cmp-git'
+Plug 'saecki/crates.nvim', { 'tag': 'stable' }
 Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
@@ -67,8 +69,15 @@ Plug 'numToStr/Comment.nvim'
 " Copilot
 Plug 'github/copilot.vim'
 
+" Cody
+Plug 'sourcegraph/sg.nvim', { 'do': 'nvim -l build/init.lua' }
+
 " Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'ellisonleao/glow.nvim'
 
 Plug 'luckasRanarison/nvim-devdocs'
+
+" Executor
+Plug 'google/executor.nvim'
+Plug 'MunifTanjim/nui.nvim'

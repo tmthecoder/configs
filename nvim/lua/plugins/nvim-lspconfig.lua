@@ -16,7 +16,7 @@ local servers = {
     'pyright',
     'rust_analyzer',
     'tsserver',
-    'vimls'
+    'vimls',
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

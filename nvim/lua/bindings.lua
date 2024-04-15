@@ -62,3 +62,6 @@ map('n', "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Comment with '/' in visual
 map('v', '/', 'gc', { remap = true })
+
+-- Show executor entry menu & executor details toggle
+map('n', '<leader>ex', ':ExecutorRun<CR>')

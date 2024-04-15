@@ -38,11 +38,34 @@ local opts = {
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
-    { name = 'calc' }
+    { name = 'calc' },
+    { name = 'cody' },
+    { name = 'crates' }
   },
+  experimental = {
+    ghost_text = true
+  }
 }
 
 cmp.setup(opts)
+
+-- Set configuration for git files.
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'git' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+-- Condiguration for toml files (rust crates)
+cmp.setup.filetype('toml', {
+  sources = cmp.config.sources({
+    { name = 'crates' },
+  }, {
+    { name = 'buffer' },
+  })
+})
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
