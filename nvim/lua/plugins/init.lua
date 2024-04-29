@@ -24,3 +24,4 @@ require('plugins/telescope')
 require('plugins/typescript')
 require('plugins/trouble')
 require('plugins/vista');
+require('plugins/wtf');

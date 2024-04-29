@@ -81,3 +81,7 @@ Plug 'luckasRanarison/nvim-devdocs'
 " Executor
 Plug 'google/executor.nvim'
 Plug 'MunifTanjim/nui.nvim'
+
+" Error Lookup - wtf
+Plug 'MunifTanjim/nui.nvim'
+Plug 'piersolenski/wtf.nvim'

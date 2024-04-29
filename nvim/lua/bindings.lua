@@ -65,3 +65,6 @@ map('v', '/', 'gc', { remap = true })
 
 -- Show executor entry menu & executor details toggle
 map('n', '<leader>ex', ':ExecutorRun<CR>')
+
+-- Search for current diagnostic
+map('n', '<leader>wtf', '<Cmd>WtfSearch<CR>')
