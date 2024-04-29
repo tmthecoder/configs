@@ -68,3 +68,5 @@ map('n', '<leader>ex', ':ExecutorRun<CR>')
 
 -- Search for current diagnostic
 map('n', '<leader>wtf', '<Cmd>WtfSearch<CR>')
+
+map('n', '<leader>ds', require('helpers.cody').diagnostic_search, opts)
