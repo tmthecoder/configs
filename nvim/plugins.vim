@@ -85,3 +85,5 @@ Plug 'MunifTanjim/nui.nvim'
 " Error Lookup - wtf
 Plug 'MunifTanjim/nui.nvim'
 Plug 'piersolenski/wtf.nvim'
+
+Plug 'kawre/leetcode.nvim'

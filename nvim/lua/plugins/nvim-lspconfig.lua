@@ -13,6 +13,7 @@ local servers = {
     'gopls',
     'jsonls',
     'lua_ls',
+    'ocamllsp',
     'pyright',
     'rust_analyzer',
     'tsserver',

@@ -21,6 +21,7 @@ local on_attach = function(client, buffnr)
     vim.keymap.set('n', '<leader>tdf', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<leader>c', vim.lsp.buf.hover, bufopts)
 
     -- Formatting
     if client.server_capabilities.documentFormattingProvider then
@@ -29,6 +30,20 @@ local on_attach = function(client, buffnr)
             buffer = buffnr,
             callback = function() vim.lsp.buf.format() end
 
+        })
+    end
+    -- code lens
+    if client.resolved_capabilities.code_lens then
+        local codelens = vim.api.nvim_create_augroup(
+            'LSPCodeLens',
+            { clear = true }
+        )
+        vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave', 'CursorHold' }, {
+            group = codelens,
+            callback = function()
+                vim.lsp.codelens.refresh()
+            end,
+            buffer = bufnr,
         })
     end
 end

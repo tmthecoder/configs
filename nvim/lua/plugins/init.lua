@@ -25,3 +25,4 @@ require('plugins/typescript')
 require('plugins/trouble')
 require('plugins/vista');
 require('plugins/wtf');
+require('plugins/leetcode');
