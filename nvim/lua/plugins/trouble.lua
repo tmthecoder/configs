@@ -1,5 +1,8 @@
-local opts = {
-    auto_open = true,
-    auto_close = true,
-}
-require('trouble').setup(opts);
+require('trouble').setup({
+    modes = {
+        diagnostics = {
+            auto_open = true,
+            auto_close = true,
+        },
+    }
+});

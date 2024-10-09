@@ -33,7 +33,7 @@ local on_attach = function(client, buffnr)
         })
     end
     -- code lens
-    if client.resolved_capabilities.code_lens then
+    if client.capabilities.code_lens then
         local codelens = vim.api.nvim_create_augroup(
             'LSPCodeLens',
             { clear = true }
