@@ -50,7 +50,7 @@ Plug 'mbbill/undotree'
 
 " Language-specific
 Plug 'mfussenegger/nvim-jdtls'
-Plug 'simrat39/rust-tools.nvim'
+Plug 'mrcjkb/rustaceanvim'
 Plug 'akinsho/flutter-tools.nvim'
 Plug 'pmizio/typescript-tools.nvim'
 Plug 'MunifTanjim/prettier.nvim'

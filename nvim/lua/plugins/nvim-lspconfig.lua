@@ -15,7 +15,6 @@ local servers = {
     'lua_ls',
     'ocamllsp',
     'pyright',
-    'rust_analyzer',
     'ts_ls',
     'vimls',
 }
